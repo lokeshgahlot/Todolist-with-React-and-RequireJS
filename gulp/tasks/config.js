@@ -13,7 +13,6 @@ module.exports = function() {
   config.jsSrc = [  config.src + '**/*.js',
                     '!' + config.src + '**/*.ignore.js',
                     '!' + config.src + '**/bower_components/**/src/**/*.js',
-                    '!' + config.src + '**/*.min.js',
                     '!' + config.src + '**/*.babelify.js'
                   ];
   config.jsDest =  config.dest + 'js/';
