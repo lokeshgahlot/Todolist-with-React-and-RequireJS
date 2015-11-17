@@ -13,6 +13,7 @@ module.exports = function() {
     gulp.src(src)
       .pipe(gp.sourcemaps.init())
       .pipe(babel())
+      .pipe(gp.flatten())
       .pipe(gp.sourcemaps.write('.'))
       .pipe(gulp.dest(dest));
   });
