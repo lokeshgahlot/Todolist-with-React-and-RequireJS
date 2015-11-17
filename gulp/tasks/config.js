@@ -22,7 +22,7 @@ module.exports = function() {
   config.babelDest =  config.dest + 'js/';
 
   //sass
-  config.sassSrc = config.src +   '**/*.sass';
+  config.sassSrc = config.src +   '**/sass/combine.sass';
   config.sassDest = config.dest + 'css/';
 
   // jade
