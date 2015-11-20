@@ -7,8 +7,7 @@
       render: function() {
         return (
           <div className='tile'>
-            <input type='checkbox' />
-            <span>{this.props.text}</span>
+            {this.props.text}
           </div>
         );
       }
@@ -17,7 +16,7 @@
 
   if (typeof define === 'function' && define.amd) {
     define('tile.babelify', [
-      'react',
+      'react'
       ], wrap);
   }
 })(this);
