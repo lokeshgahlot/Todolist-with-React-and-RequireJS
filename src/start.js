@@ -1,7 +1,13 @@
 require.config({
   paths: {
     'react': 'react.min',
-    'react-dom': 'react-dom.min'
+    'react-dom': 'react-dom.min',
+    'firebase': 'firebase.min',
+    'reactfire': 'reactfire.min'
+  },
+  shim: {
+    'firebase': {exports: 'Firebase'},
+    'reactfire': {exports: 'reactfire'}
   }
 });
 
