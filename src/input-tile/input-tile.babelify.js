@@ -3,10 +3,15 @@
   var wrap = function(React) {
     return React.createClass({
       displayName: 'input-tile',
+      handleSubmit: function(e) {
+        console.log('*************', this.refs.listItem.value.trim());
+      },
       render: function() {
         return (
           <div className='input-tile'>
-            <input type='input' placeholder='Add new item'/>
+            <form onSubmit={this.handleSubmit}>
+              <input ref="listItem" type='text' placeholder='Add new item'/>
+            </form>
           </div>
         );
       }
