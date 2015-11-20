@@ -16,7 +16,7 @@
       },
       componentWillMount: function() {
         this.firebaseRef = new Firebase("https://todo-app-react.firebaseio.com/lokesh");
-        this.bindAsArray(firebaseRef.limitToLast(25), 'items');
+        this.bindAsArray(this.firebaseRef.limitToLast(25), 'items');
       },
       onChange: function(e) {
         this.setState({text: e.target.value});
