@@ -29,7 +29,7 @@ module.exports = function() {
   config.jadeSrc = config.src +   '**/*.jade';
   config.jadeDest = config.dest;
 
-  config.cssWatcherSrc = [config.sassSrc];
+  config.cssWatcherSrc = [config.src + '**/*.sass'];
   config.htmlWatcherSrc = [config.jadeSrc];
   config.jsWatcherSrc = [config.src + '**/*.js'];
 
