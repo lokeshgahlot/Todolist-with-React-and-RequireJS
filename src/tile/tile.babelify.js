@@ -6,7 +6,7 @@
       displayName: 'Tile',
       render: function() {
         return (
-          <div className='tile'>
+          <div className='tile' data-key={this.props.key}>
             {this.props.text}
           </div>
         );

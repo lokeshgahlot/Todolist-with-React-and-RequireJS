@@ -9,7 +9,7 @@
         var items = this.props.items.map(function(item, index) {
           return (
               <li>
-                <Tile text={item} />
+                <Tile text={item['.value']} key={item['.key']} />
               </li>
             );
         });

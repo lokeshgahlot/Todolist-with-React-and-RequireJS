@@ -15,14 +15,14 @@
         };
       },
       componentWillMount: function() {
-        this.firebaseRef = new Firebase("https://todo-app-react.firebaseio.com/lokesh");
-        this.bindAsArray(this.firebaseRef.limitToLast(25), 'items');
+        // this.firebaseRef = new Firebase("https://todo-app-react.firebaseio.com/lokesh/items");
+        // this.bindAsArray(this.firebaseRef.limitToLast(25), 'items');
       },
       onChange: function(e) {
         this.setState({text: e.target.value});
       },
-      removeItem: function(key) {
-        var firebaseRef = new Firebase('https://ReactFireTodoApp.firebaseio.com/items/');
+      /*removeItem: function(key) {
+        var firebaseRef = new Firebase('https://todo-app-react.firebaseio.com/lokesh/items');
         firebaseRef.child(key).remove();
       },
       addItem: function() {
@@ -32,12 +32,34 @@
           this.setState({
             text: ''
           });
+      },*/
+
+      onSubmit: function() {
+        console.log('********>>>>>');
       },
       render: function() {
+
+        var tempData = [
+          {
+            '.key': '1',
+            '.value': 'todo-1'
+          },
+
+          {
+            '.key': '2',
+            '.value': 'todo-2'
+          },
+
+          {
+            '.key': '3',
+            '.value': 'todo-3'
+          },
+        ];
+        // <Tiles items={ this.state.items } />
         return (
           <div className="main">
-            <Tiles items={[1, 2, 3]} />
-            <InputTile />
+            <Tiles items={ tempData } />
+            <InputTile onSubmit={this.onSubmit}/>
           </div>
         );
       }
