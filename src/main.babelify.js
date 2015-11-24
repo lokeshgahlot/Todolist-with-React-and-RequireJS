@@ -26,6 +26,9 @@
             text: ''
           });
       },
+      removeItem: function(key) {
+
+      },
       render: function() {
         var list = this.state.items.map(function(item ,index) {
           return {
@@ -36,7 +39,7 @@
 
         return (
           <div className="main">
-            <Tiles items={list} />
+            <Tiles items={list} removeItem={removeItem}/>
             <InputTile onSubmit={this.onSubmit}/>
           </div>
         );
