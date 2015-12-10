@@ -12,7 +12,7 @@
         };
       },
       componentWillMount: function() {
-        this.firebaseRef = new Firebase("https://todo-app-react.firebaseio.com/lokesh/items");
+        this.firebaseRef = new Firebase('https://todo-app-react.firebaseio.com/lokesh/items');
         this.bindAsArray(this.firebaseRef.limitToLast(25), 'items');
       },
       onChange: function(e) {
@@ -27,7 +27,7 @@
           });
       },
       removeItem: function(key) {
-
+        console.log('key = ', key);
       },
       render: function() {
         var list = this.state.items.map(function(item ,index) {
@@ -38,8 +38,8 @@
         });
 
         return (
-          <div className="main">
-            <Tiles items={list} removeItem={removeItem}/>
+          <div className='main'>
+            <Tiles items={list} removeItem={this.removeItem}/>
             <InputTile onSubmit={this.onSubmit}/>
           </div>
         );
