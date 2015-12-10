@@ -10,6 +10,7 @@ module.exports = function() {
   require('./babel')();
   require('./express')();
   require('./clean')();
+  require('./sprites')();
 
   var config = require('./config')();
 
@@ -26,6 +27,11 @@ module.exports = function() {
     gulp.watch(config.jsWatcherSrc, ['generate-js'], function() {
       console.log('JS file changed, rebuilding...');
     });
+
+    gulp.watch(config.imageWatcherSrc, ['generate-image'], function() {
+      console.log('Image file changed, rebuilding...');
+    });
+
   });
 
   // end watch
@@ -43,7 +49,11 @@ module.exports = function() {
     console.log('generate-html....');
   });
 
-  gulp.task('generate',['generate-html', 'generate-css', 'generate-js'], function() {
+  gulp.task('generate-image', ['sprites'], function() {
+    console.log('generate-images....');
+  });
+
+  gulp.task('generate',['generate-html', 'generate-css', 'generate-js', 'generate-image'], function() {
     console.log('generate....');
   });
 

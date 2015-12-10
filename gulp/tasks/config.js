@@ -6,7 +6,7 @@ module.exports = function() {
     dest: '../dest/',
     env: process.env.NODE_ENV,
     pory: process.env.NODE_PORT,
-    portProxy: process.env.NODE_PROXY_PORT
+    portProxy: ''
   };
 
   // js
@@ -29,9 +29,15 @@ module.exports = function() {
   config.jadeSrc = config.src +   '**/*.jade';
   config.jadeDest = config.dest;
 
+  // images
+  config.spriteSrc = config.src +   '**/*.svg';
+  config.spriteDest = config.dest + 'svg/';
+  config.spriteCSSDest = config.dest + 'css/sprite.css';
+
   config.cssWatcherSrc = [config.src + '**/*.sass'];
   config.htmlWatcherSrc = [config.jadeSrc];
   config.jsWatcherSrc = [config.src + '**/*.js'];
+  config.imageWatcherSrc = [config.src + '**/*.svg'];
 
   return config;
 };
