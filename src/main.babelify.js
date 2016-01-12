@@ -27,7 +27,7 @@
           });
       },
       removeItem: function(key) {
-        console.log('key = ', key);
+        this.firebaseRef.child(key).remove();
       },
       render: function() {
         var list = this.state.items.map(function(item ,index) {
