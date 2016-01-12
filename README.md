@@ -5,4 +5,4 @@ Frameworks and tools used:- ReactJS, RequireJS, Gulp, NodeJS and Firebase
 - Goto gulp folder `cd gulp`
 - Install node packages `npm install`
 - Run gulp server using `gulp server`command
-- Clean the build using `gulp clean`got
+- Clean the build using `gulp clean`
