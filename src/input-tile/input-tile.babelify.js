@@ -4,7 +4,9 @@
     return React.createClass({
       displayName: 'input-tile',
       handleSubmit: function(e) {
+        e.preventDefault();
         this.props.onSubmit(this.refs.listItem.value.trim());
+        this.refs.listItem.value = '';
       },
       render: function() {
         return (
