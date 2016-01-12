@@ -4,16 +4,12 @@
   var wrap = function(React) {
     return React.createClass({
       displayName: 'Tile',
-      deleteMe: function() {
-        // todo: will add remove logic
-        // this.props.removeItem(this.props.key);
-        console.log('click....', this.props);
-      },
       render: function() {
+        var self = this;
         return (
-          <div className='tile' key={this.props.key} >
-            {this.props.text}
-            <i className='icon trash' onClick= {this.deleteMe}/>
+          <div className='tile'>
+            {this.props.item.text}
+            <i className='icon trash' onClick={self.props.removeItem.bind(null, this.props.item.key)}/>
           </div>
         );
       }

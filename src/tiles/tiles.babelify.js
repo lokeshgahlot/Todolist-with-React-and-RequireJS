@@ -9,7 +9,7 @@
         var items = this.props.items.map(function(item, index) {
           return (
               <li>
-                <Tile text={item.text} key={item.key}  removeItem={self.props.removeItem}/>
+                <Tile item={item} removeItem={self.props.removeItem}/>
               </li>
             );
         });
